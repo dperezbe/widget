@@ -13,8 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
   (function (window, document, scriptTagName, globalName, scriptAddress, scriptElement, otherScriptElement) {
-	  console.log(global);
-    window['ChatLynn-Widget'] = global;
+	  console.log(globalName);
+    window['ChatLynn-Widget'] = globalName;
     window[globalName] = window[globalName] || function () {
     (window[globalName].q = window[globalName].q || []).push(arguments);
     window[globalName].s = scriptAddress;
