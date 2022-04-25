@@ -13,21 +13,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
 
-    (function (window, document, scriptTagName, globalName, scriptAddress, scriptElement, otherScriptElement) {
-    window['ChatLynn-Widget'] = globalName;
-    window[globalName] = window[globalName] || function () {
-    (window[globalName].q = window[globalName].q || []).push(arguments);
-    window[globalName].s = scriptAddress;
-    };
+    (function (window, document, scriptTagName, globalName, scriptAddress, token, validation) {
+        // store the name of the global variable
+        window['ChatLynn-Widget'] = globalName;
 
-    scriptElement = document.createElement(scriptTagName);
-    otherScriptElement = document.getElementsByTagName(scriptTagName)[0];
-    scriptElement.async = 1;
-    scriptElement.src = scriptAddress;
-    otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
-    })(window, document, 'script', 'mw', 'https://lynndiego.azurefd.net/widget/2913/main');
+        window[globalName] = window[globalName] || function () {
+            window[globalName].s = scriptAddress;
+            (window[globalName].q = window[globalName].q || []).push(arguments);
+        };
 
-    mw('create', 'rut', { uid: "54047-2524" }, {});
+        if (token) {
+            window[globalName].t = token;
+        }
+        if (validation) {
+            window[globalName].v = validation;
+        }
+        // ------------------------
+        var formData = new FormData();
+        formData.append("token", token);
+        var request = new XMLHttpRequest();
+        request.open("POST", scriptAddress, true);
+        request.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                window.eval(this.responseText);
+            }
+        };
+        request.send(formData);
+        // ------------------------
+
+        })(window, document, 'script', 'mw', '/widget/widget', '@ViewBag.Token', '@ViewBag.Validation');
+        mw('create', 'myCriteria', { myCriteria: "123456789" }, { title: "Chat" });
 
     </script>
 
