@@ -11,9 +11,8 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <script>
-
-    function generate() {
+    <script>
+ function generate() {
         var d = new Date().getTime();
         var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             var r = (d + Math.random() * 16) % 16 | 0;
@@ -23,45 +22,26 @@
         return guid;
 	}
 
+
+
     (function (window, document, scriptTagName, globalName, scriptAddress, scriptElement, otherScriptElement) {
-    window['ChatLynn-Widget'] = globalName;
-    window[globalName] = window[globalName] || function () {
-    (window[globalName].q = window[globalName].q || []).push(arguments);
-    window[globalName].s = scriptAddress;
-    };
+        // store the name of the global variable
+        window['ChatLynn-Widget'] = globalName;
 
-    scriptElement = document.createElement(scriptTagName);
-    otherScriptElement = document.getElementsByTagName(scriptTagName)[0];
-    scriptElement.async = 1;
-    scriptElement.src = scriptAddress;
-    otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
-    })(window, document, 'script', 'mw', 'https://lynn-latam-production-br-ch-reg-t2913.azurewebsites.net/widget/main');
+        window[globalName] = window[globalName] || function () {
+            window[globalName].s = scriptAddress;
+            (window[globalName].q = window[globalName].q || []).push(arguments);
+        };
 
-    mw('create', 'rut', { rut: generate(), Nombre: "Cliente" }, { showform: false });
+        scriptElement = document.createElement(scriptTagName);
+        otherScriptElement = document.getElementsByTagName(scriptTagName)[0];
+        scriptElement.async = 1;
+        scriptElement.src = scriptAddress;
 
+        otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
+    })(window, document, 'script', 'mw', 'https://premium-production.lynn.cx/connector/2586/main');
+        mw('create', 'uid', { uid: generate(), Nombre: "Cliente" }, { title: "Chat" });
 
-    const PromiseCheckElement = function () {
-        return new Promise(resolve => {
-            requestAnimationFrame(resolve); //faster than set time out
-        });
-    };
-
-    const checkElement = function () {
-        if (typeof _hubConnection === 'undefined' || _hubConnection.sessionID === "") {
-            return PromiseCheckElement().then(() => checkElement());
-        } else {
-            return Promise.resolve(true);
-        }
-    };
-
-    checkElement().then((elm) => {
-        for (var i = 0; i < 5; i++) {
-        
-            _hubConnection.setUserData({ rut: generate(), Nombre: "Cliente" });
-            _hubConnection.startConnection();
-
-        }
-    });
     </script>
 
 
