@@ -14,28 +14,17 @@
  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-
-    (function (window, document, scriptTagName, globalName, scriptAddress, scriptElement, otherScriptElement) {
-    window['ChatLynn-Widget'] = globalName;
-    window[globalName] = window[globalName] || function () {
-    (window[globalName].q = window[globalName].q || []).push(arguments);
-    window[globalName].s = scriptAddress;
-    };
-
-    scriptElement = document.createElement(scriptTagName);
-    otherScriptElement = document.getElementsByTagName(scriptTagName)[0];
-    scriptElement.async = 1;
-    scriptElement.src = scriptAddress;
-    otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
-    })(window, document, 'script', 'mw', 'https://lynn-latam-testing-br-ch-reg-t2793.azurewebsites.net/widget/main?v=1.0');
-
-    mw('create', 'uid', { uid: "42111-3177" }, {});
-
+    (function(w,d,scriptTagName,globalName,scriptAddress,tk,val){
+    w['ChatLynn-Widget']=globalName;w[globalName]=w[globalName]||function(){w[globalName].s=scriptAddress;(w[globalName].q=w[globalName].q||[]).push(arguments);};if(tk){w[globalName].t=tk;} if(val){w[globalName].v=val;} var formData=new FormData();formData.append("tk",tk);var request=new XMLHttpRequest();request.open("POST",scriptAddress,true);request.onreadystatechange=function(){if(this.readyState===4){scriptElement=d.createElement(scriptTagName);otherScriptElement=d.getElementsByTagName(scriptTagName)[0];scriptElement.async=1;scriptElement.text=this.responseText;otherScriptElement.parentNode.insertBefore(scriptElement,otherScriptElement);}};request.send(formData);})
+    (window,document,'script','mw','https://lynn-latam-testing-br-ch-reg-t2793.azurewebsites.net/widget/widget?v=1.0','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiMjc5MyIsImh0dHA6Ly9sb2NhbGhvc3Q6NjM5MzkvIl0sImNzdF90a191cmxfbm90aWZpY2F0aW9uc190b3BpYyI6InRjb21tb25faW50ZWdyYXRpb25zbWVzc2FnZXMiLCJjc3RfdGtfZGl2aXNpb24iOiJbXSIsImNzdF90a190ZW5hbnQiOiIyNzkzIiwiY3N0X3RrX2FjY2Vzc190b2tlbiI6IjR1ZGV4M2d2NTE1M3c5ejYiLCJjc3RfdGtfYWNjZXNzX3NlY3JldCI6IjcyZjFlMWZmLTQ3OWYtNGU1OC05NWRkLTkxN2ZjNzRlNTUxYiIsImNzdF90a190b2tlbl9vbmVfdXNlIjoiZmFsc2UiLCJjc3RfdGtfdGhlbWVfd2lkZ2V0X2lkIjoiZmFhMTBjZWUtNzZmMy00ZmI3LTkwYTctOWNjMjRmMjI0MDQ3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo2MzkzOS8ifQ.eWnGLbyNR9nVGI6NNSIlHyppWelbxX55neV9mZDgMqY','');
+    mw('create','uid',{uid:"31244-2793"},{});
     </script>
 
-
-    </script>
 
 
 
